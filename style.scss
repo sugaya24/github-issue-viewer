@@ -1,0 +1,30 @@
+$text-black: #363636;
+
+.container {
+  width: 960px;
+}
+
+.card {
+  margin-top: 20px;
+  img {
+    border-radius: 50%;
+  }
+  .label {
+    display: inline;
+    padding: 5px;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+  .title a {
+    color: $text-black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}

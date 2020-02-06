@@ -1,0 +1,33 @@
+.container {
+  width: 960px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+.card .label {
+  display: inline;
+  padding: 5px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.card .title a {
+  color: #363636;
+}
+
+.card .title a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
