@@ -1,8 +1,10 @@
 // const fetch = require('node-fetch');
 
-let card = '';
-fetch('https://api.github.com/repos/nodejs/node/issues')
+const param = location.search.split('?')[1];
+$('#repo-name').html(param);
+fetch(`https://api.github.com/repos/${param}/issues`)
   .then(function(response) {
+    console.log(param);
     if (response.status !== 200) {
       console.log(
         `Looks like there was a problem. Status Code : ${response.stats}`
@@ -12,6 +14,8 @@ fetch('https://api.github.com/repos/nodejs/node/issues')
 
     // Examine the text in the response
     response.json().then(function(data) {
+      let card = '';
+      console.log(data);
       for (let i = 0; i < data.length; i++) {
         const url = data[i].html_url;
         const avatar = data[i].user.avatar_url;
@@ -43,11 +47,11 @@ fetch('https://api.github.com/repos/nodejs/node/issues')
           `         </figure>` +
           `       </div>` +
           `       <div class="media-content">` +
-          `         <p id="user-name" class="title is-4"><a href="${userUrl}">${displayName}</a></p>` +
+          `         <p id="user-name" class="user title is-4"><a href="${userUrl}">${displayName}</a></p>` +
           `         <p class="subtitle is-6">#${issueId}</p>` +
           `       </div>` +
           `     </div>` +
-          `     <div id="title" class="title is-4"><a href="${url}">${title}</a></div>` +
+          `     <div id="title" class="repo-title title is-4"><a href="${url}">${title}</a></div>` +
           `     <div class="content">` +
           // `       <a href="#">${tag1}</a> <a href="#">${tag1}</a>` +
           `       ${label}` +
@@ -66,6 +70,7 @@ fetch('https://api.github.com/repos/nodejs/node/issues')
     console.log(`Fetch Error :-S`, err);
   });
 
+// change text color depends on background color
 const getBright = function(colorcode, mod) {
   if (colorcode.match(/^#/)) {
     colorcode = colorcode.slice(1);

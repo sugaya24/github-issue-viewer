@@ -10,6 +10,20 @@
   border-radius: 50%;
 }
 
+.card .card-header .title a:hover {
+  color: #3273dc;
+  text-decoration: underline;
+}
+
+.card .user a {
+  color: #363636;
+}
+
+.card .user a:hover {
+  color: #363636;
+  text-decoration: underline;
+}
+
 .card .label {
   display: inline;
   padding: 5px;
@@ -17,12 +31,13 @@
   margin-right: 10px;
 }
 
-.card .title a {
-  color: #363636;
+.card .repo-title a:hover {
+  text-decoration: underline;
+  color: #3273dc;
 }
 
-.card .title a:hover {
-  text-decoration: underline;
+.card .content span {
+  margin-right: 20px;
 }
 
 @media (max-width: 768px) {

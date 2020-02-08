@@ -10,21 +10,14 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Github issue viewer</title>
+    <title>github issues viewer</title>
   </head>
   <body>
     <div class="container">
       <h1 class="title is-1">Github issues</h1>
-      <div id="search">
-        <input
-          id="search-input"
-          class="input"
-          type="text"
-          placeholder="Search repository…"
-        />
-      </div>
-      <div>
-        <ul id="repo-list"></ul>
+      <h2 id="repo-name" class="repo-name title is-2"></h2>
+      <div id="list-issues">
+        <ul class="card-js"></ul>
       </div>
     </div>
     <script
@@ -32,8 +25,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="search.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
